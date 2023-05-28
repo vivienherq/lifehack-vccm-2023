@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import MainNavigation from "../components/ui/MainNavigation";
 import classes from "./Chat.module.css";
 import ChatMessage from "../components/chat/ChatMessage";
+import UploadFileModal from "../components/chat/UploadFileModal"
 
 const ChatPage = () => {
   // const [input, setInput] = useState("");
@@ -14,12 +15,25 @@ const ChatPage = () => {
   //   // console.log("submit");
   // };
 
+  // upload files
+  const [uploadFile, setUploadFile] = useState(false);
+
+  const newBotHandler = () => {
+    setUploadFile(true);
+    console.log("CLICKED")
+  };
+
+  const uploadHandler = () => {
+    setUploadFile(false);
+  };
+
   return (
     <>
+      {uploadFile && <UploadFileModal onClose={uploadHandler} />}
       <MainNavigation />
       <div className={classes.chat}>
         <aside className={classes.sidemenu}>
-          <div className={classes["sidemenu-button"]}>
+          <div className={classes["sidemenu-button"]} onClick={newBotHandler}>
             <span>+</span>
             New Bot
           </div>
