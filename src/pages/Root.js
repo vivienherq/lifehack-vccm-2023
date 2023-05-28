@@ -18,8 +18,8 @@ const RootLayout = () => {
 
   return (
     <>
-      {loginIsShown && <Login onClose={hideLoginHandler} />}
-      <MainNavigation onShowLogin={showLoginHandler} />
+      {/* {loginIsShown && <Login onClose={hideLoginHandler} />} */}
+      {/* <MainNavigation onShowLogin={showLoginHandler} /> */}
       <main className={classes.content}>
         <Outlet />
       </main>

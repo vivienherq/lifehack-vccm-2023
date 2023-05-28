@@ -1,21 +1,23 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "./pages/Home";
 import RootLayout from "./pages/Root";
-import Page from "./pages/Page";
+import ChatPage from "./pages/Chat";
 import LoginPage from "./pages/Login";
+import LandingPage from "./pages/Landing";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <RootLayout />,
     children: [
-      { path: "/", element: <HomePage /> },
-      { path: "/page", element: <LoginPage /> }
-      // { path: "/page", element: <Page /> },
-      // { path: "/page", element: <Page /> },
+      { path: "/", element: <LandingPage /> },
+      { path: "/login", element: <LoginPage /> },
+      { path: "/home", element: <HomePage /> },
+      { path: "/page", element: <ChatPage /> }
     ],
   },
 ]);
+
 function App() {
   return <RouterProvider router={router} />;
 }

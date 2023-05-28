@@ -1,0 +1,49 @@
+.login {
+  background-image: url("../assets/login-bg.jpeg");
+  position: fixed;
+  min-height: 100%;
+  min-width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.button-sgid {
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 8px;
+    width: 470px;
+    background-color: #4961C1;
+    color: #FFFFFF;
+    outline-color: #4961C1;
+}
+
+.button {
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 8px;
+    width: 150px;
+}
+
+.float-container {
+  /* border: 3px solid #fff; */
+  padding: 20px;
+  height: 100%;
+  /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+.float-child {
+  width: 50%;
+  float: left;
+  padding: 20px;
+  /* border: 2px solid red; */
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
