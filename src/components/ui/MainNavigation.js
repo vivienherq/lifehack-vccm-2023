@@ -12,7 +12,7 @@ const MainNavigation = (props) => {
       <nav>
         <ul className={classes.list}>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/home">Home</Link>
           </li>
           <li>
             <Link to="/chat">Chat</Link>
