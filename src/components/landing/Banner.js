@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import { Container, Row, Col } from "react-bootstrap";
 import { ArrowRightCircle } from "react-bootstrap-icons";
-import headerImg from "../../assets/header-image.png";
+import headerImg from "../../assets/info-chat-vector.png";
 
 import classes from "./Banner.module.css";
 
@@ -63,13 +63,19 @@ const Banner = () => {
                 {`Get help for your `}
                 <span className="wrap">{text}</span>
               </h1>
-              <p style={{padding: 30}}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur.
+              <p style={{ padding: 30 }}>
+                Welcome to VCCM, a revolutionary educational platform designed
+                to empower the future generation through technology and provide
+                a seamless learning experience in our increasingly digitized
+                world. In the post-COVID-19 era, traditional educational methods
+                have undergone a significant transformation, and it is crucial
+                to adapt to these changes to ensure students' success at all
+                levels of education. Our mission is to bridge the gap between
+                students and technology, catering to learners from elementary
+                school to postgraduate education. Whether a student is just
+                starting their educational journey or seeking advanced knowledge
+                in a specific field, VCCM offers comprehensive resources and
+                tools to support their growth and development.
               </p>
               <button onClick={routeChange}>
                 Get Started

@@ -36,32 +36,25 @@ const LoginPage = () => {
     return <h1>Loading....</h1>;
   }
 
-  // if (user !== null) {
-  //   return <Navigate to="/home" />;
-  // }
-
   return (
     <div className={classes.login}>
-      <div className={classes["login-bg-image"]}>
-        {/* <Image
-          src={require("../assets/login-vector.jpeg")}
+      <VStack>
+        <Image
+          src={require("../assets/login-vector-2.png")}
           borderRadius="ml"
-          position="absolute"
-          bottom="10%"
-          right="10%"
-          maxWidth="60%"
-          minWidth="200px"
-        /> */}
-      </div>
-      <div className={classes["login-card"]}>
-        <img src={logoImage} height="28"/>
-        <button className={classes["button-sgid"]} onClick={logInHandler}>
-          Log in with Singpass
-        </button>
-        <button className={classes.button}>Log in with Google</button>
-        <button className={classes.button}>Log in with Facebook</button>
-        <button className={classes.button}>Log in with Github</button>
-      </div>
+          maxWidth="70%"
+          minWidth="400px"
+        />
+
+        <div className={classes["login-card"]}>
+          <button className={classes["button-sgid"]} onClick={logInHandler}>
+            Log in with Singpass
+          </button>
+          <button className={classes.button}>Log in with Google</button>
+          <button className={classes.button}>Log in with Facebook</button>
+          <button className={classes.button}>Log in with Github</button>
+        </div>
+      </VStack>
     </div>
   );
 };

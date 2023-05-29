@@ -1,4 +1,14 @@
+:root {
+    --login-bg: #f5f6f8;
+    --light-indigo: #727aa1;
+    --mid-indigo: #707fcc;
+}
+
+body {
+    background-color: var(--login-bg) !important;
+    padding: 2rem auto;
+}
+
 .content {
-    margin: auto;
     text-align: center;
 }

@@ -34,6 +34,11 @@ const ChatPage = () => {
 
   // console.log(`my name is: ${user.data['myinfo.name']}`);
 
+  const message = [
+    { from: "vccm", message: "help me agnnn" },
+    { from: "aibot", message: "how now brown cow" },
+  ];
+
   return (
     <>
       {uploadFile && <UploadFileModal onClose={uploadHandler} />}
@@ -51,13 +56,8 @@ const ChatPage = () => {
         </aside>
         <section className={classes.chatbox}>
           <div className={classes["chat-log"]}>
-            <ChatMessage />
-            <div className={classes["chat-message-chatgpt"]}>
-              <div className={classes["chat-message-center"]}>
-                <div className={classes["avatar-chatgpt"]}></div>
-                <div className={classes.message}>I am an AI</div>
-              </div>
-            </div>
+            <ChatMessage message={message[0]} />
+            <ChatMessage message={message[1]} />
           </div>
           <div className={classes["chat-input-holder"]}>
             <textarea

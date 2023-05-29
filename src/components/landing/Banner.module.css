@@ -1,3 +1,12 @@
+:root {
+  --login-bg: #f5f6f8;
+  --light-indigo: #727aa1;
+  --mid-indigo: #707fcc;
+  --indigo: #707fcc;
+  --mustard: #ebaf2c;
+  --ogp-blue: #316EF1;
+}
+
 .banner {
   margin-top: 0;
   padding: 1% 0 100px 0;
@@ -22,6 +31,7 @@
   display: inline-block;
 }
 .banner h1 {
+  color: var(--ogp-blue);
   font-size: 65px;
   font-weight: 700;
   letter-spacing: 0.8px;
@@ -30,7 +40,7 @@
   display: block;
 }
 .banner p {
-  color: #b8b8b8;
+  color: var(--mid-indigo);
   font-size: 18px;
   letter-spacing: 0.8px;
   line-height: 1.5em;
@@ -39,7 +49,9 @@
 }
 .banner button {
   background-color: transparent;
-  color: #fff;
+  color: var(--mustard);
+  border-color: var(--mustard);
+  border-radius: 20px;
   font-weight: 700;
   font-size: 20px;
   margin-top: 60px;
@@ -47,7 +59,24 @@
   display: flex;
   align-items: center;
   margin: auto;
+  padding: 5px 20px 5px 20px;
 }
+
+.banner button:hover {
+  background-color: var(--mustard);
+  color: var(--login-bg);
+  border-color: var(--mustard);
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 20px;
+  margin-top: 60px;
+  letter-spacing: 0.8px;
+  display: flex;
+  align-items: center;
+  margin: auto;
+  padding: 5px 20px 5px 20px;
+}
+
 .banner button svg {
   font-size: 25px;
   margin-left: 10px;
