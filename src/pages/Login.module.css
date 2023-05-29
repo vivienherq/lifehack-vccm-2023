@@ -19,7 +19,7 @@
 .login-card {
   padding: 1rem;
   box-shadow: 0 2px 8px rgba(0,0,0,0.25);
-  background-color: rgba(255, 255, 255, 0.698);
+  background-color: rgba(5, 4, 4, 0.698);
   border-radius: 14px;
   width: 50%;
   margin-left: auto;
@@ -50,6 +50,7 @@
     margin-right: 5px;
     padding: 8px;
     width: 150px;
+    background-color: var(--mid-indigo);
 }
 
 .float-container {

@@ -3,9 +3,10 @@ import MainNavigation from "../components/ui/MainNavigation";
 import classes from "./Chat.module.css";
 import ChatMessage from "../components/chat/ChatMessage";
 import UploadFileModal from "../components/chat/UploadFileModal";
-import { MdChatBubbleOutline } from "react-icons/md";
-import Bot from "../components/chat/Bot";
 import BotList from "../components/chat/BotList";
+import LogOutButton from "../components/login/LogoutButton";
+import useAuth from "../hooks/useAuth";
+import { Navigate } from "react-router-dom";
 
 const ChatPage = () => {
   // const [input, setInput] = useState("");
@@ -29,10 +30,17 @@ const ChatPage = () => {
     setUploadFile(false);
   };
 
+  const { isLoading, user } = useAuth();
+
+  // console.log(`my name is: ${user.data['myinfo.name']}`);
+
   return (
     <>
       {uploadFile && <UploadFileModal onClose={uploadHandler} />}
-      <MainNavigation />
+      <MainNavigation>
+        <h1>Welcome, {user === null ? "" : user.data['myinfo.name']}</h1>
+        <LogOutButton />
+      </MainNavigation>
       <div className={classes.chat}>
         <aside className={classes.sidemenu}>
           <div className={classes["sidemenu-button"]} onClick={newBotHandler}>
@@ -40,14 +48,6 @@ const ChatPage = () => {
             New Bot
           </div>
           <BotList />
-          {/* <Bot>Bot 1</Bot> */}
-          {/* <div className={classes["sidemenu-bot"]}>
-            <span>
-              <MdChatBubbleOutline />
-            </span>
-            {bot.name}
-            Bot 1
-          </div> */}
         </aside>
         <section className={classes.chatbox}>
           <div className={classes["chat-log"]}>
