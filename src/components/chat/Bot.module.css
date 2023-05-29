@@ -1,0 +1,26 @@
+.bot {
+  padding: 10px;
+  margin-top: 10px;
+  /* border: 1px solid white; */
+  /* border-bottom: 1px solid white; */
+  border-radius: 5px;
+  text-align: left;
+  transition: ease 0.25s all;
+  color: white;
+  cursor: pointer;
+  list-style: none;
+}
+
+.bot span {
+  padding-left: 6px;
+  padding-right: 12px;
+}
+
+.goal-item {
+  margin: 1rem 0;
+  background: #8b005d;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  color: white;
+  padding: 1rem 2rem;
+  cursor: pointer;
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Bot 1",
+    "file": "pdf 1",
+    "fileName": "test 1"
+  },
+  {
+    "id": 2,
+    "name": "Bot 2",
+    "file": "pdf 2",
+    "fileName": "test 2"
+  },
+  {
+    "id": 3,
+    "name": "Bot 3",
+    "file": "pdf 3",
+    "fileName": "test 3"
+  }
+]

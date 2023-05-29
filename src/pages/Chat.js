@@ -2,7 +2,10 @@ import React, { useState } from "react";
 import MainNavigation from "../components/ui/MainNavigation";
 import classes from "./Chat.module.css";
 import ChatMessage from "../components/chat/ChatMessage";
-import UploadFileModal from "../components/chat/UploadFileModal"
+import UploadFileModal from "../components/chat/UploadFileModal";
+import { MdChatBubbleOutline } from "react-icons/md";
+import Bot from "../components/chat/Bot";
+import BotList from "../components/chat/BotList";
 
 const ChatPage = () => {
   // const [input, setInput] = useState("");
@@ -36,6 +39,15 @@ const ChatPage = () => {
             <span>+</span>
             New Bot
           </div>
+          <BotList />
+          {/* <Bot>Bot 1</Bot> */}
+          {/* <div className={classes["sidemenu-bot"]}>
+            <span>
+              <MdChatBubbleOutline />
+            </span>
+            {bot.name}
+            Bot 1
+          </div> */}
         </aside>
         <section className={classes.chatbox}>
           <div className={classes["chat-log"]}>
