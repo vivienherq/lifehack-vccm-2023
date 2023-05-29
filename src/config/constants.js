@@ -1,0 +1,1 @@
+export const SGID_BACKEND_URL = 'http://localhost:5001';

@@ -9,7 +9,7 @@ const MainNavigation = (props) => {
   return (
     <header className={classes.header}>
       <img src={logoImage} height="28"/>
-      <nav>
+      {/* <nav>
         <ul className={classes.list}>
           <li>
             <Link to="/home">Home</Link>
@@ -19,7 +19,7 @@ const MainNavigation = (props) => {
           </li>
         </ul>
       </nav>
-      <HeaderProfileButton onClick={props.onShowLogin}/>
+      <HeaderProfileButton onClick={props.onShowLogin}/> */}
     </header>
   );
 }
