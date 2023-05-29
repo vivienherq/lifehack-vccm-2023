@@ -10,7 +10,7 @@ const HeaderProfileButton = (props) => {
         <ProfileIcon />
       </span>
       <span>Your Name</span>
-      <span className={classes.badge}>3</span>
+      {/* <span className={classes.badge}>3</span> */}
     </button>
   );
 };
