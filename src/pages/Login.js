@@ -1,36 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { useNavigate, Navigate } from "react-router-dom";
 import classes from "./Login.module.css";
 import { SGID_BACKEND_URL } from "../config/constants";
 import useAuth from "../hooks/useAuth";
-
-import {
-  Box,
-  Button,
-  FormControl,
-  FormLabel,
-  Image,
-  Input,
-  Text,
-  VStack,
-  Spacer,
-} from "@chakra-ui/react";
+import logoImage from "../assets/logo-temp.png"
+import { Image, VStack } from "@chakra-ui/react";
 
 const LoginPage = () => {
-  // const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  // const loginHandler = () => {
-  //   setIsLoggedIn(true);
-  // };
-
-  // let navigate = useNavigate();
-  // const routeChange = () => {
-  //   let path = `/home`;
-  //   navigate(path);
-  // };
   const [isLoading, setIsLoading] = useState(false);
+  const [hasError, setHasError] = useState(false);
 
-  const logInHandler = () => {
+  const logInHandler = useCallback(() => {
     setIsLoading(true);
 
     fetch(`${SGID_BACKEND_URL}/api/auth-url`, {
@@ -43,20 +24,17 @@ const LoginPage = () => {
       .catch((e) => {
         setIsLoading(false);
         if (e instanceof Error) {
+          setHasError(true)
           return alert("ERROR");
         }
       });
-  };
+  }, [hasError]);
 
   const { user, isLoading: isUserLoading } = useAuth();
 
   if (isUserLoading) {
     return <h1>Loading....</h1>;
   }
-
-  // if (user !== null) {
-  //   return <Navigate to="/home" />;
-  // }
 
   return (
     <div className={classes.login}>
@@ -69,7 +47,7 @@ const LoginPage = () => {
         />
 
         <div className={classes["login-card"]}>
-          <button className={classes["button-sgid"]}>
+          <button className={classes["button-sgid"]} onClick={logInHandler}>
             Log in with Singpass
           </button>
           <button className={classes.button}>Log in with Google</button>
