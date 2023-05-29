@@ -7,7 +7,7 @@ const LogOutButton = () => {
   const navigate = useNavigate();
   const handleLogout = useCallback(() => {
     setIsLoading(true);
-    fetch(`${SGID_BACKEND_URL}/api/logout`, {
+    fetch(`/myapi/api/logout`, {
       credentials: "include",
     })
       .then(() => {
