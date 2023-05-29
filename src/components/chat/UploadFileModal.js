@@ -54,7 +54,9 @@ const UploadFileModal = (props) => {
 
       JSZip.loadAsync(files[0]).then(function (zip) {
         Object.keys(zip.files).forEach(function (filename) {
-          const names = Object.keys(zip.files);
+          const names = Object.keys(zip.files).filter(
+            (fileName) => !zip.files[fileName].dir // Filter out directories
+          );
           setFileNames(names);
           // console.log(fileNames)
           zip.files[filename].async("ArrayBuffer").then(function (uint8array) {
