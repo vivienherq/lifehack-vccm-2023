@@ -1,20 +1,66 @@
 [
   {
-    "id": 1,
-    "name": "Bot 1",
-    "file": "pdf 1",
-    "fileName": "test 1"
+    "user": "vccm",
+    "bots": [
+      {
+        "id": 1,
+        "name": "Bot 1",
+        "files": ["pdf1", "pdf2", "pdf3"],
+        "chatlog": [
+          { "from": "vccm", "message": "help me" },
+          { "from": "aibot", "message": "how" }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Bot 2",
+        "files": ["pdf1", "pdf2", "pdf3"],
+        "chatlog": [
+          { "from": "vccm", "message": "help me agn" },
+          { "from": "aibot", "message": "how now" }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Bot 3",
+        "files": ["pdf1", "pdf2", "pdf3"],
+        "chatlog": [
+          { "from": "vccm", "message": "help me agnnn" },
+          { "from": "aibot", "message": "how now brown cow" }
+        ]
+      }
+    ]
   },
   {
-    "id": 2,
-    "name": "Bot 2",
-    "file": "pdf 2",
-    "fileName": "test 2"
-   },
-  {
-    "id": 3,
-    "name": "Bot 3",
-    "file": "pdf 3",
-    "fileName": "test 3"
+    "user": "mccv",
+    "bots": [
+      {
+        "id": 1,
+        "name": "Bot 1",
+        "files": ["pdf1", "pdf2", "pdf3"],
+        "chatlog": [
+          { "from": "vccm", "message": "help me" },
+          { "from": "aibot", "message": "how" }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Bot 2",
+        "files": ["pdf1", "pdf2", "pdf3"],
+        "chatlog": [
+          { "from": "vccm", "message": "help me agn" },
+          { "from": "aibot", "message": "how now" }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Bot 3",
+        "files": ["pdf1", "pdf2", "pdf3"],
+        "chatlog": [
+          { "from": "vccm", "message": "help me agnnn" },
+          { "from": "aibot", "message": "how now brown cow" }
+        ]
+      }
+    ]
   }
 ]
