@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Outlet } from "react-router-dom";
 import MainNavigation from "../components/ui/MainNavigation";
-import Login from "../components/login/Login";
 
 import classes from "./Root.module.css";
 

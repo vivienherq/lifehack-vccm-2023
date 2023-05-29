@@ -4,6 +4,9 @@ import classes from "./Chat.module.css";
 import ChatMessage from "../components/chat/ChatMessage";
 import UploadFileModal from "../components/chat/UploadFileModal";
 import BotList from "../components/chat/BotList";
+import LogOutButton from "../components/login/LogoutButton";
+import useAuth from "../hooks/useAuth";
+import { Navigate } from "react-router-dom";
 
 const ChatPage = () => {
 
@@ -19,6 +22,7 @@ const ChatPage = () => {
   };
 
   // add state for input and chat log
+  const { isLoading, user } = useAuth();
   const [input, setInput] = useState("");
   const [chatLog, setChatLog] = useState([
     { from: "vccm", message: "help me agnnn" },
@@ -50,7 +54,10 @@ const ChatPage = () => {
   return (
     <div className={classes.chatpage}>
       {uploadFile && <UploadFileModal onClose={uploadHandler} />}
-      <MainNavigation />
+      <MainNavigation>
+        <h1>Welcome, {user === null ? "" : user.data['myinfo.name']}</h1>
+        <LogOutButton />
+      </MainNavigation>
       <div className={classes.chat}>
         <aside className={classes.sidemenu}>
           <div className={classes["sidemenu-button"]} onClick={newBotHandler}>
