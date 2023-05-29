@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import { Container, Row, Col } from "react-bootstrap";
 import { ArrowRightCircle } from "react-bootstrap-icons";
-import headerImg from "../../assets/header-image.png";
+import headerImg from "../../assets/info-chat-vector.png";
 
 import classes from "./Banner.module.css";
 
@@ -63,7 +63,7 @@ const Banner = () => {
                 {`Get help for your `}
                 <span className="wrap">{text}</span>
               </h1>
-              <p style={{padding: 30}}>
+              <p style={{ padding: 30 }}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris

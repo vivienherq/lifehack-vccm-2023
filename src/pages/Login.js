@@ -11,6 +11,8 @@ import {
   Image,
   Input,
   Text,
+  VStack,
+  Spacer,
 } from "@chakra-ui/react";
 
 const LoginPage = () => {
@@ -28,25 +30,23 @@ const LoginPage = () => {
 
   return (
     <div className={classes.login}>
-      <div className={classes["login-bg-image"]}>
+      <VStack>
         <Image
-          src={require("../assets/login-vector.jpeg")}
+          src={require("../assets/login-vector-2.png")}
           borderRadius="ml"
-          position="absolute"
-          bottom="10%"
-          right="10%"
-          maxWidth="60%"
-          minWidth="200px"
+          maxWidth="70%"
+          minWidth="400px"
         />
-      </div>
-      <div className={classes["login-card"]}>
-        <button className={classes["button-sgid"]} onClick={routeChange}>
-          Log in with Singpass
-        </button>
-        <button className={classes.button}>Log in with Google</button>
-        <button className={classes.button}>Log in with Facebook</button>
-        <button className={classes.button}>Log in with Github</button>
-      </div>
+
+        <div className={classes["login-card"]}>
+          <button className={classes["button-sgid"]} onClick={routeChange}>
+            Log in with Singpass
+          </button>
+          <button className={classes.button}>Log in with Google</button>
+          <button className={classes.button}>Log in with Facebook</button>
+          <button className={classes.button}>Log in with Github</button>
+        </div>
+      </VStack>
     </div>
   );
 };

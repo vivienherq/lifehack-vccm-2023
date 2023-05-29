@@ -1,3 +1,13 @@
+:root {
+  --login-bg: #f5f6f8;
+  --light-indigo: #727aa1;
+  --mid-indigo: #707fcc;
+  --dull-indigo: #37458c;
+  --indigo: #707fcc;
+  --mustard: #ebaf2c;
+  --ogp-blue: #316EF1;
+}
+
 .header {
     /* max-width: 60rem;
     margin: auto;
@@ -14,7 +24,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 4%;
+    padding: 2rem 4%;
     /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25); */
     z-index: 10;
     margin: auto;
@@ -28,7 +38,7 @@
   
   .list a {
     text-decoration: none;
-    color: var(--color-primary-400);
+    color: var(--mustard);
   }
   
   .list a:hover,
