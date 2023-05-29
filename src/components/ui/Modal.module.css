@@ -20,6 +20,8 @@
   z-index: 30;
   animation: slide-down 300ms ease-out forwards;
   color: black;
+  max-height: calc(100vh - 210px);
+  overflow-y: auto;
 }
 
 @media (min-width: 768px) {

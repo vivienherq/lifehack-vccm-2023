@@ -20,7 +20,6 @@ const ChatPage = () => {
 
   const newBotHandler = () => {
     setUploadFile(true);
-    console.log("CLICKED")
   };
 
   const uploadHandler = () => {
