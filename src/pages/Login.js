@@ -14,7 +14,7 @@ const LoginPage = () => {
   const logInHandler = useCallback(() => {
     setIsLoading(true);
 
-    fetch(`https://cors-anywhere.herokuapp.com/${SGID_BACKEND_URL}/api/auth-url`, {
+    fetch(`${SGID_BACKEND_URL}/api/auth-url`, {
       credentials: "include",
     })
       .then(async (r) => await r.json())
