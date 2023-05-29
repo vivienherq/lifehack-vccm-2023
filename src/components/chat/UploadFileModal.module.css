@@ -1,6 +1,13 @@
+.uploadfilemodal {
+  height: 500px;
+}
+
 .botname {
   color: black;
-  padding: 0.3rem;
+  padding: 8px;
+  display: inline-block;
+  margin: auto;
+  width: 200px;
 }
 
 .actions {
@@ -31,4 +38,57 @@
 .actions .button {
   background-color: #8a2b06;
   color: white;
+}
+
+.upload-zip {
+  display: "flex";
+  margin: "0 auto";
+  flex-direction: "column";
+  align-items: "flex-start";
+  width: "min-content";
+}
+
+.buttons {
+  width: auto;
+  display: flex;
+}
+
+.button-close {
+  display: inline-block;
+  border-radius: 15px;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 5px;
+  padding: 8px;
+  width: 80px;
+  background-color: var(--mid-indigo);
+  color: #ffffff;
+  border-color: transparent;
+}
+
+.button-close:hover {
+  background-color: transparent;
+  color: var(--mid-indigo);
+  border-color: var(--mid-indigo);
+}
+
+.button-upload {
+  display: inline-block;
+  border-radius: 15px;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 5px;
+  padding: 8px;
+  width: 80px;
+  background-color: var(--mid-indigo);
+  color: #ffffff;
+  border-color: transparent;
+}
+
+.button-upload:hover {
+  background-color: transparent;
+  color: var(--mid-indigo);
+  border-color: var(--mid-indigo);
 }

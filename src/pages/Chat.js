@@ -3,20 +3,9 @@ import MainNavigation from "../components/ui/MainNavigation";
 import classes from "./Chat.module.css";
 import ChatMessage from "../components/chat/ChatMessage";
 import UploadFileModal from "../components/chat/UploadFileModal";
-import { MdChatBubbleOutline } from "react-icons/md";
-import Bot from "../components/chat/Bot";
 import BotList from "../components/chat/BotList";
 
 const ChatPage = () => {
-  // const [input, setInput] = useState("");
-  // const [chatLog, setChatLog] = useState([]);
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   setChatLog([...chatLog, { user: "me", message: `${input}` }]);
-  //   setInput("");
-  //   // console.log("submit");
-  // };
 
   // upload files
   const [uploadFile, setUploadFile] = useState(false);
@@ -29,13 +18,37 @@ const ChatPage = () => {
     setUploadFile(false);
   };
 
-  const message = [
+  // add state for input and chat log
+  const [input, setInput] = useState("");
+  const [chatLog, setChatLog] = useState([
     { from: "vccm", message: "help me agnnn" },
     { from: "aibot", message: "how now brown cow" },
-  ];
+    { from: "vccm", message: "how do i code this app?" },
+  ]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    let chatLogNew = [...chatLog, { from: "me", message: `${input}` }];
+    setInput("");
+    setChatLog([...chatLogNew])
+    // fetch request to the api combining the chatlog array of messages and sending it as a message to localhost:3000 as a post
+    // const messages = chatLogNew.map((message) => message.message).join("\n")
+    // const response = await fetch("http://localhost:3080", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify({
+    //     message: messages,
+    //   }),
+    // });
+    // const data = await response.json();
+    // await setChatLog([...chatLogNew, {user:"aibot", message:`${data.message}`}])
+    console.log("submit");
+  };
 
   return (
-    <>
+    <div className={classes.chatpage}>
       {uploadFile && <UploadFileModal onClose={uploadHandler} />}
       <MainNavigation />
       <div className={classes.chat}>
@@ -48,21 +61,26 @@ const ChatPage = () => {
         </aside>
         <section className={classes.chatbox}>
           <div className={classes["chat-log"]}>
-            <ChatMessage message={message[0]} />
-            <ChatMessage message={message[1]} />
+            {chatLog.map((message, index) => (
+              <ChatMessage key={index} message={message} />
+            ))}
+            {/* <ChatMessage message={message[0]} />
+            <ChatMessage message={message[1]} /> */}
           </div>
           <div className={classes["chat-input-holder"]}>
-            <textarea
-              rows="1"
-              // value={input}
-              // onChange={() => setInput(e.target.value)}
-              className={classes["chat-input-textarea"]}
-              placeholder="Type your message here."
-            ></textarea>
+            <form onSubmit={handleSubmit}>
+              <input
+                rows="1"
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                className={classes["chat-input-textarea"]}
+                placeholder="Type your message here."
+              ></input>
+            </form>
           </div>
         </section>
       </div>
-    </>
+    </div>
   );
 };
 

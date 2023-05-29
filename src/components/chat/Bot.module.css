@@ -6,9 +6,12 @@
   border-radius: 5px;
   text-align: left;
   transition: ease 0.25s all;
-  color: white;
+  color: #316EF1;
   cursor: pointer;
   list-style: none;
+}
+.bot:hover {
+    background-color: rgba(49, 110, 241, 0.158);
 }
 
 .bot span {
@@ -16,11 +19,3 @@
   padding-right: 12px;
 }
 
-.goal-item {
-  margin: 1rem 0;
-  background: #8b005d;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-  color: white;
-  padding: 1rem 2rem;
-  cursor: pointer;
-}

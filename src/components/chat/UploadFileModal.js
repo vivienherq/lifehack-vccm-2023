@@ -1,31 +1,10 @@
 import React, { useState, useRef } from "react";
 import Modal from "../ui/Modal";
 import classes from "./UploadFileModal.module.css";
-import styled from "styled-components";
 import JSZip from "jszip";
-
-import { Viewer } from "@react-pdf-viewer/core";
-import { defaultLayoutPlugin } from "@react-pdf-viewer/default-layout";
-import "@react-pdf-viewer/core/lib/styles/index.css";
-import "@react-pdf-viewer/default-layout/lib/styles/index.css";
-import { Worker } from "@react-pdf-viewer/core";
+import userBots from "./Bots.json";
 
 //https://www.spguides.com/upload-file-in-react-js/
-
-const Button = styled.button`
-  padding: 0.5rem 2rem;
-  border: 1px solid #8a2b06;
-  border-radius: 25px;
-  margin-bottom: 1rem;
-  color: #8a2b06;
-  background-color: transparent;
-
-  &:hover {
-    background-color: #5a1a01;
-    border-color: #5a1a01;
-    color: white;
-  }
-`;
 
 const UploadFileModal = (props) => {
   const [data, setData] = useState("Nothing uploaded yet.");
@@ -39,6 +18,7 @@ const UploadFileModal = (props) => {
       e.preventDefault();
       const { target } = e;
       const { files } = target;
+
       if (files.length > 1) {
         console.log("I will only process the first file.");
       }
@@ -52,45 +32,84 @@ const UploadFileModal = (props) => {
         localRes = resolve;
       });
 
-      JSZip.loadAsync(files[0]).then(function (zip) {
-        Object.keys(zip.files).forEach(function (filename) {
+      const filePromises = [];
+      const fileArray = [];
+
+      JSZip.loadAsync(files[0]).then((zip) => {
+        Object.keys(zip.files).forEach((filename) => {
+          const file = zip.files[filename];
+          if (!file.dir) {
+            filePromises.push(file.async("ArrayBuffer"));
+            fileArray.push(file.name);
+          }
           const names = Object.keys(zip.files).filter(
             (fileName) => !zip.files[fileName].dir // Filter out directories
           );
-          setFileNames(names);
-          // console.log(fileNames)
-          zip.files[filename].async("ArrayBuffer").then(function (uint8array) {
-            const decodedData = new TextDecoder("utf-8").decode(uint8array);
-            setData(decodedData);
+          const filteredNames = names.filter((_, index) => index % 2 === 0);
+          setFileNames(filteredNames);
 
-            localRes();
-          });
+          // zip.files[filename].async("ArrayBuffer").then((uint8array) => {
+          //   const decodedData = new TextDecoder("utf-8").decode(uint8array);
+          //   setData(decodedData);
+          //   localRes();
+          // });
         });
-      });
 
-      promise.then(() => {
-        // Do something after the promise is resolved
+        Promise.all(filePromises).then((fileContents) => {
+          const formData = new FormData();
+          fileContents.forEach((content, index) => {
+            formData.append("files[]", new Blob([content]), fileArray[index]);
+          });
+
+          // Send the FormData to the backend using an HTTP request
+          // fetch("YOUR_BACKEND_URL", {
+          //   method: "POST",
+          //   body: formData,
+          // })
+          //   .then((response) => response.json())
+          //   .then((responseData) => {
+          //     console.log(responseData);
+          //     // Handle the response from the backend
+          //   })
+          //   .catch((error) => {
+          //     console.error("Upload error", error);
+          //   });
+        });
       });
     } catch (err) {
       console.error("Upload error", err);
     }
   };
 
+  const user = "vccm";
+  const userBot = userBots.filter((bot) => bot.user === user)[0].bots;
+
+  const [bots, setBots] = useState(userBot);
+
+  const uploadHandler = () => {
+    setBots([
+      ...userBot,
+      { id: 4, name: "name", files: ["file"], chatlog: {} },
+    ])
+  };
+
   return (
     <Modal>
+      <div>
+        <h1>New Bot</h1>
+        <label>
+          Bot Name:{" "}
+          <input
+            name="postTitle"
+            defaultValue="New Bot"
+            className={classes.botname}
+          />
+        </label>
+      </div>
       <div className="App">
         <h2>Upload ZIP file.</h2>
-        <div
-          style={{
-            display: "flex",
-            margin: "0 auto",
-            flexDirection: "column",
-            alignItems: "flex-start",
-            width: "min-content",
-          }}
-        >
+        <div className={classes["upload-zip"]}>
           <div style={{ display: "inline-flex" }}>
-            Upload:&nbsp;
             <input
               type="file"
               name={"upload"}
@@ -99,13 +118,18 @@ const UploadFileModal = (props) => {
             />
           </div>
         </div>
-        <h2>Data:</h2>
-
-        <p> {fileNames}</p>
+        <h3>Uploaded files:</h3>
+        {fileNames.map((name) => (
+          <div key={name}>{name}</div>
+        ))}
+        <br></br>
+        <div className={classes.buttons}>
+          <button className={classes["button-upload"]}>Upload</button>
+          <button className={classes["button-close"]} onClick={props.onClose}>
+            Close
+          </button>
+        </div>
       </div>
-      <button className={classes["button--alt"]} onClick={props.onClose}>
-        Close
-      </button>
     </Modal>
   );
 };

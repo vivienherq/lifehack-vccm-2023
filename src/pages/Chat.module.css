@@ -1,15 +1,30 @@
+:root {
+  --login-bg: #f5f6f8;
+  --light-indigo: #727aa1;
+  --mid-indigo: #707fcc;
+  --dull-indigo: #37458c;
+  --indigo: #707fcc;
+  --mustard: #ebaf2c;
+  --ogp-blue: #316ef1;
+}
+
+.chatpage {
+  background-color: #f5f6f8;
+}
+
 .chat {
   display: flex;
   position: absolute;
   bottom: 0;
   right: 0;
   left: 0;
-  height: 90vh;
+  height: 91vh;
 }
 
 .sidemenu {
   width: 240px;
   padding: 10px;
+  background-color: #f5f6f8;
   /* border: 1px solid white; */
   /* height: 90vh; */
   /* background-color: #F4F6F8 */
@@ -17,20 +32,22 @@
 
 .chatbox {
   flex: 1;
-  border: 1px solid white;
+  /* border: 1px solid white; */
   position: relative;
+  background-color: #eaeef4;
 }
 
 .sidemenu-button {
   padding: 10px;
-  border: 1px solid white;
+  border: 1px solid #316ef1;
   border-radius: 5px;
   text-align: left;
   transition: ease 0.25s all;
+  color: #316ef1;
 }
 
 .sidemenu-button:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(49, 110, 241, 0.158);
 }
 
 .sidemenu-button span {
@@ -39,19 +56,19 @@
 }
 
 .sidemenu-bot {
-    padding: 10px;
-    margin-top:10px;
-    /* border: 1px solid white; */
-    /* border-bottom: 1px solid white; */
-    border-radius: 5px;
-    text-align: left;
-    transition: ease 0.25s all;
-  }
+  padding: 10px;
+  margin-top: 10px;
+  /* border: 1px solid white; */
+  /* border-bottom: 1px solid white; */
+  border-radius: 5px;
+  text-align: left;
+  transition: ease 0.25s all;
+}
 
 .sidemenu-bot span {
-    padding-left: 6px;
-    padding-right: 12px;
-  }
+  padding-left: 6px;
+  padding-right: 12px;
+}
 
 .chat-log {
   text-align: left;
@@ -60,6 +77,7 @@
 .chat-message-chatgpt {
   background-color: rgba(255, 255, 255, 0.1);
 }
+
 .chat-message-center {
   max-width: 640px;
   margin-left: auto;
@@ -79,11 +97,11 @@
 }
 
 .avatar-chatgpt {
-    background: #0da37f;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-  }
+  background: #0da37f;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
 
 .message {
   padding-left: 40px;
@@ -99,13 +117,19 @@
 }
 
 .chat-input-textarea {
-  background-color: #40414f;
-  width: 90%;
+  background-color: #727aa1;
+  width: 60%;
   padding: 10px;
+  padding-left: 20px;
   color: white;
   font-size: 1.25em;
   border-radius: 5px;
   border: none;
   outline: none;
-  box-shadow: 0 0 8px rgb(0, 0, 0, 0.25);
+  box-shadow: 0 0 4px rgb(0, 0, 0, 0.25);
+
+}
+
+.chat-input-textarea::placeholder {
+  color: #f5f6f8;
 }

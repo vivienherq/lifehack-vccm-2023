@@ -1,5 +1,5 @@
 .chat-message-center {
-    max-width: 640px;
+    max-width: 660px;
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -7,17 +7,18 @@
     display: flex;
     padding-left: 24px;
     padding-right: 24px;
+    color: black
   }
   
   .avatar {
-    background: white;
+    background: #ebaf2c;
     border-radius: 50%;
     width: 40px;
     height: 40px;
   }
   
   .avatar-chatgpt {
-      background: #0da37f;
+      background: #316ef1;
       border-radius: 50%;
       width: 40px;
       height: 40px;
