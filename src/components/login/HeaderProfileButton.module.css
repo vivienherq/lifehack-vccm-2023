@@ -1,9 +1,19 @@
+:root {
+  --login-bg: #f5f6f8;
+  --light-indigo: #727aa1;
+  --mid-indigo: #707fcc;
+  --dull-indigo: #37458c;
+  --indigo: #707fcc;
+  --mustard: #ebaf2c;
+  --ogp-blue: #316EF1;
+}
+
 .button {
     cursor: pointer;
     font: inherit;
     border: none;
-    background-color: #010101;
-    color: white;
+    background-color: transparent;
+    color: var(--ogp-blue);
     padding: 0.5rem 1rem;
     display: flex;
     justify-content: space-around;
@@ -14,7 +24,8 @@
   
   .button:hover,
   .button:active {
-    background-color: rgb(255, 255, 255, 0.25);
+    background-color: var(--dull-indigo);
+    color: white;
   }
   
   .icon {
