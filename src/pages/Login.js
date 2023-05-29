@@ -4,7 +4,7 @@ import classes from "./Login.module.css";
 import { SGID_BACKEND_URL } from "../config/constants";
 import useAuth from "../hooks/useAuth";
 import logoImage from "../assets/logo-temp.png"
-import { Image } from "@chakra-ui/react";
+import { Image, VStack } from "@chakra-ui/react";
 
 const LoginPage = () => {
 
