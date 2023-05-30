@@ -11,8 +11,16 @@ const LoginPage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [hasError, setHasError] = useState(false);
   const [showButton, setShowButton] = useState(true);
+  const [showButton1, setShowButton1] = useState(true);
+  const [showButton2, setShowButton2] = useState(true);
   const toggleButton = () => {
     setShowButton(!showButton);
+  };
+  const toggleButton1 = () => {
+    setShowButton1(!showButton1);
+  };
+  const toggleButton2 = () => {
+    setShowButton2(!showButton2);
   };
 
   const logInHandler = useCallback(() => {
@@ -55,8 +63,8 @@ const LoginPage = () => {
             Log in with Singpass
           </button>
           {showButton && <button onClick={toggleButton} className={classes.button}>Log in with Google</button>}
-          {showButton && <button onClick={toggleButton} className={classes.button}>Log in with Facebook</button>}
-          {showButton && <button onClick={toggleButton} className={classes.button}>Log in with Github</button>}
+          {showButton1 && <button onClick={toggleButton1} className={classes.button}>Log in with Facebook</button>}
+          {showButton2 && <button onClick={toggleButton2} className={classes.button}>Log in with Github</button>}
         </div>
       </VStack>
     </div>
