@@ -7,7 +7,7 @@ const useAuth = () => {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    fetch(`${SGID_BACKEND_URL}}/api/userinfo`, {
+    fetch(`${SGID_BACKEND_URL}/api/userinfo`, {
       credentials: 'include',
     })
       .then(async (r) => await r.json())
