@@ -1,7 +1,7 @@
 import { useCallback, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { SGID_BACKEND_URL } from "../../config/constants";
-
+import classes from "./logoutButton.module.css"
 const LogOutButton = () => {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
@@ -20,7 +20,7 @@ const LogOutButton = () => {
         }
       }, []);
   });
-  return (<button onClick={handleLogout}>Log out</button>
+  return (<button className={classes["button-logout"]}onClick={handleLogout}>Log out</button>
   );
 };
 
